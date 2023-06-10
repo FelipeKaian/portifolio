@@ -45,7 +45,7 @@ function Orbit({ planets }) {
           justifyContent: 'center',
           alignItems: 'center',
           height: '85vh',
-          width: '80vw',
+          width: '70vw',
         }}
       >
         {planets.map((p, i) => {
@@ -61,11 +61,11 @@ function Orbit({ planets }) {
               index={i}
               color={p.color}
               img={p.img}
-              width={10 + Math.cos(a - 90) * 5}
-              height={10 + Math.cos(a - 90) * 5}
+              width={10 + Math.cos(a - 90) * 3}
+              height={10 + Math.cos(a - 90) * 3}
               top={20}
               z={Math.floor(Math.sin(a) * 10)}
-              left={45 + Math.cos(a) * (35)}
+              left={45 + Math.cos(a) * (26)}
             >
             </Planet>
           );

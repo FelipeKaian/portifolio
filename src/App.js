@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import Orbit from './components/Orbit';
-import Planet from './components/Planet';
-import Sun from './components/Sun';
+import Panel from './components/Panel';
+// import svgFile from './assets/spaceship-window.svg';
+// import { ReactSVG } from 'react-svg';
+
 
 function App() {
   return (
     <div
+    
       style={{
         width: '100%',
         height: '100%',
@@ -13,6 +16,7 @@ function App() {
         justifyContent: 'center',
       }}
     >
+      {/* <ReactSVG src={svgFile} /> */}
       <Orbit
         planets={[
           {
