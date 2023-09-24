@@ -14,6 +14,7 @@ function Planet({
   selectPlanet,
   text,
   img,
+  link
 }) {
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
@@ -22,7 +23,12 @@ function Planet({
     <div
       onClick={() => {
         selectPlanet(index);
-        setIsSelected(!isSelected);
+        setIsSelected(true);
+        setTimeout(()=>{
+          window.open(link);
+          setIsSelected(false);
+          selectPlanet(null);
+        },1000)
       }}
       onMouseLeave={() => {
         if (rotationSpeed !== OrbitationTypes.fast) {
@@ -37,11 +43,14 @@ function Planet({
         }
       }}
       style={{
-        backgroundSize:width + 'vw',
-        backgroundImage:
-            img?'url('+img+')':"",
-        transition: isSelected ? '1s' : '0s',
-        transform: isSelected ? 'scale(5)' : 'scale(1)',
+        backgroundSize: width + 'vw',
+
+        transition: '1s transform',
+        transform: isSelected
+          ? 'scale(4)'
+          : isHover
+          ? 'scale(1.3)'
+          : 'scale(1)',
         position: 'absolute',
         left: left + '%',
         top: top + '%',
@@ -63,25 +72,41 @@ function Planet({
     >
       <h1
         style={{
-          top: -(width/2)+'vw',
+          top: -(width / 2) + 'vw',
           position: 'absolute',
+          textAlign: 'center',
           textTransform: 'uppercase',
           fontFamily: 'verdana',
-          fontSize: (width/5)+'vw',
+          fontSize: width / 5 + 'vw',
           fontWeight: '700',
           color: '#f5f5f5',
-          textShadow: `1px 1px 1px #919191,
-             1px 2px 1px #919191,
-             1px 3px 1px #919191,
-             1px 4px 1px #919191,
-             1px 5px 1px #919191,
-             1px 6px 1px #919191,
-             1px 7px 1px #919191,
-             1px 8px 1px #919191`,
+          textShadow: isSelected
+            ? `0px 0.25px 0px #919191,
+            0px 0.5px 0px #919191,
+            0px 0.75px 0px #919191,
+            0px 1px 0px #919191,
+            0px 1.25px 0px #919191,
+            0px 1.5px 0px #919191,
+            0px 1.75px 0px #919191,
+            0px 2px 0px #919191,
+            0px 2.25px 0px #919191,
+            0px 2.5px 0px #919191
+            `
+            : `0px 1px 0px #919191,
+             0px 2px 0px #919191,
+             0px 3px 0px #919191,
+             0px 4px 0px #919191,
+             0px 5px 0px #919191,
+             0px 6px 0px #919191,
+             0px 7px 0px #919191,
+             0px 8px 0px #919191`,
         }}
       >
         {text}
       </h1>
+      <div style={{display:'flex',justifyContent:"center"}}>
+        <img src={img} width={width * 15}></img>
+      </div>
     </div>
   );
 }
