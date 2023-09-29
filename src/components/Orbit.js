@@ -7,7 +7,7 @@ function Orbit({ planets }) {
   const [rotation, setRotation] = useState(0);
   const [rotationSpeed, setRotationSpeed] = useState(OrbitationTypes.normal);
   const [selectedPlanetIndex, setSelectedPlanetIndex] = useState(null);
-
+  const [projectHovered, setProjectHovered] = useState(false);
   const [mouse, setMouse] = useState(null);
 
   const selectPlanet = (i) => {
@@ -37,15 +37,17 @@ function Orbit({ planets }) {
     <div onClick={() => {}}>
       <div
         style={{
-          width: '80vw',
+          width: '100vw',
           display: 'flex',
           justifyContent: 'center',
+          overflow:'hidden'
         }}
       >
         <Sun
           mouse={mouse}
           rotationSpeed={rotationSpeed}
           setRotationSpeed={setRotationSpeed}
+          projectHovered={projectHovered}
         />
       </div>
       <div
@@ -53,8 +55,8 @@ function Orbit({ planets }) {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '85vh',
-          width: '70vw',
+          height: '100vh',
+          width: '100vw',
           overflow: 'hidden',
         }}
       >
@@ -73,11 +75,12 @@ function Orbit({ planets }) {
               img={p.img}
               width={7 + Math.cos(a - 90) * 4}
               height={7 + Math.cos(a - 90) * 4}
-              top={25}
+              top={175}
               z={Math.floor(Math.sin(a) * 10)}
               left={45 + Math.cos(a) * 25}
               mouse={mouse}
               link={p.link}
+              setProjectHovered={setProjectHovered}
             />
           );
         })}

@@ -14,7 +14,8 @@ function Planet({
   selectPlanet,
   text,
   img,
-  link
+  link,
+  setProjectHovered
 }) {
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
@@ -34,12 +35,14 @@ function Planet({
         if (rotationSpeed !== OrbitationTypes.fast) {
           setRotationSpeed(OrbitationTypes.normal);
           setIsHover(false);
+          setProjectHovered(false);
         }
       }}
       onMouseEnter={() => {
         if (rotationSpeed !== OrbitationTypes.fast) {
           setRotationSpeed(OrbitationTypes.slow);
           setIsHover(true);
+          setProjectHovered(true);
         }
       }}
       style={{
@@ -53,7 +56,7 @@ function Planet({
           : 'scale(1)',
         position: 'absolute',
         left: left + '%',
-        top: top + '%',
+        top: +top+'%',
         zIndex: z,
         marginTop: '20vh',
         width: width + 'vw',
@@ -105,7 +108,7 @@ function Planet({
         {text}
       </h1>
       <div style={{display:'flex',justifyContent:"center"}}>
-        <img src={img} width={width * 15}></img>
+        <img src={img} width={(width*15)+'vw'}></img>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { OrbitationTypes } from '../Utils';
 
-function Sun({ setRotationSpeed, mouse, rotationSpeed }) {
+function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered }) {
   const [isHover, setIsHover] = useState(false);
   const [blink, setBlink] = useState(false);
 
@@ -32,18 +32,18 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed }) {
           setBlink(false);
         }, 100);
       }}
-      onMouseLeave={() => {
-        if (rotationSpeed !== OrbitationTypes.fast) {
-          setRotationSpeed(OrbitationTypes.normal);
-          setIsHover(false);
-        }
-      }}
-      onMouseEnter={() => {
-        if (rotationSpeed !== OrbitationTypes.fast) {
-          setRotationSpeed(OrbitationTypes.slow);
-          setIsHover(true);
-        }
-      }}
+      // onMouseLeave={() => {
+      //   if (rotationSpeed !== OrbitationTypes.fast) {
+      //     setRotationSpeed(OrbitationTypes.normal);
+      //     setIsHover(false);
+      //   }
+      // }}
+      // onMouseEnter={() => {
+      //   if (rotationSpeed !== OrbitationTypes.fast) {
+      //     setRotationSpeed(OrbitationTypes.slow);
+      //     setIsHover(true);
+      //   }
+      // }}
       style={{
         // backgroundImage:
         //   'url(https://s3.amazonaws.com/gameartpartnersimagehost/wp-content/uploads/2019/10/T-03.gif)',
@@ -86,7 +86,7 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed }) {
       <h1
         style={{
           top: 1 + mouseOffsetY + 'vw',
-          left: 3 + mouseOffsetX + 'vw',
+          left: blink ?3.5 + mouseOffsetX + 'vw':3 + mouseOffsetX + 'vw',
           position: 'absolute',
           textTransform: 'uppercase',
           fontFamily: 'verdana',
@@ -101,7 +101,7 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed }) {
       <h1
         style={{
           top: 1 + mouseOffsetY + 'vw',
-          left: 13 + mouseOffsetX + 'vw',
+          left: blink ?13.5 + mouseOffsetX + 'vw':13 + mouseOffsetX + 'vw',
           position: 'absolute',
           textTransform: 'uppercase',
           fontFamily: 'verdana',
@@ -114,18 +114,19 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed }) {
       </h1>
       <h1
         style={{
-          top: -5 + mouseOffsetY + 'vw',
-          left: 7 + mouseOffsetX + 'vw',
+          top: projectHovered?11 + mouseOffsetY + 'vw':8.5 + mouseOffsetY + 'vw',
+          left: projectHovered?9 + mouseOffsetX + 'vw' :10 + mouseOffsetX + 'vw',
+          transform: projectHovered?'' :'rotateZ(90deg)',
           position: 'absolute',
           textTransform: 'uppercase',
-          fontFamily: 'verdana',
-          fontSize: 20 / 2 + 'vw',
+          fontSize: projectHovered? '2vw': '4vw',
           fontWeight: '100',
           color: 'rgba(0,0,0,0.4)',
           textAlign: 'center',
+          fontFamily: 'Segoe UI Emoji',
         }}
       >
-        {'_'}
+        {projectHovered ? '●': ')'}
       </h1>
     </div>
   );
