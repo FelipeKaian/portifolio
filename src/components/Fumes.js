@@ -86,8 +86,8 @@ function Fumes() {
         z={1}
       ></Cloud>
       <Cloud
-        top={115}
-        scale={8}
+        top={105}
+        scale={6}
         left={80}
         z={1}
       ></Cloud>
@@ -97,6 +97,7 @@ function Fumes() {
         left={110}
         z={1}
       ></Cloud>
+      
     </div>
   );
 }

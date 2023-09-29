@@ -3,9 +3,9 @@ function Rocket() {
     <>
       <style>
         {`@keyframes bounce {
-          0% {transform: translate3d(0px, 0px, 0);}
-          50% {transform: translate3d(0px, -4px, 0);}
-          100% {transform: translate3d(0px, 0px, 0);}
+          0% {transform: translate3d(0px, 2px, 0);}
+          50% {transform: translate3d(0px, 6px, 0);}
+          100% {transform: translate3d(0px, 2px, 0);}
           }`}
       </style>
       <div

@@ -1,5 +1,6 @@
 import Fumes from './Fumes';
 import Rocket from './Rocket';
+import Stars from './Stars';
 import Text from './Text';
 
 function Launch() {
@@ -19,6 +20,7 @@ function Launch() {
           alignItems: 'center',
         }}
       >
+        <Stars></Stars>
         <Text text="Hi, i'm Felipe Kaian"></Text>
         <div
           style={{
@@ -30,6 +32,7 @@ function Launch() {
           <Rocket></Rocket>
           <Fumes></Fumes>
         </div>
+        
       </div>
     </div>
   );

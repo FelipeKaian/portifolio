@@ -75,7 +75,7 @@ function Orbit({ planets }) {
               img={p.img}
               width={7 + Math.cos(a - 90) * 4}
               height={7 + Math.cos(a - 90) * 4}
-              top={175}
+              top={200}
               z={Math.floor(Math.sin(a) * 10)}
               left={45 + Math.cos(a) * 25}
               mouse={mouse}

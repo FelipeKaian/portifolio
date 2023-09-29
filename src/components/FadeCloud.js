@@ -1,16 +1,16 @@
 function FadeCloud ({scale,z,top,left}){
     return <>
-    <style>
+    {/* <style>
         {`@keyframes fade {
-          0% {transform: translate3d(0px, 0px, 0) scale(${scale});}
-          50% {transform: translate3d(0px, -4px, 0) scale(${scale});}
-          100% {transform: translate3d(0px, 0px, 0) scale(${scale});}
+          0% {transform: translate3d(0px, 0px, 0); width: 0px; height: 0px;}
+          25% {transform: translate3d(0, 50px, 0); width: 50px; height: 50px;}
+          50% {transform: translate3d(-200px, 100px, 0)}
           }`}
-      </style>
+      </style> */}
     <div
     style={{
       transform: 'scale('+scale+')',
-      animation: 'fade 2s infinite',
+      animation: 'fade 5s infinite',
       position: 'absolute',
       left: left + '%',
       top: +top+'%',

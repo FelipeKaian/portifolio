@@ -9,11 +9,26 @@ import amazing from './assets/amazinglogo.png';
 import Orbit from './components/Orbit';
 import Meteor from './components/Meteor';
 import Launch from './components/Launch';
+import { useEffect } from 'react';
 
 function App() {
+
   return (
     <>
+      <div
+        style={{
+          position: 'absolute',
+          width: '100vw',
+          height: '70vh',
+          backgroundColor: 'white',
+          top: '90vh',
+          background:
+            'linear-gradient(to bottom, transparent 0%, white 10%, black 100%)',
+          zIndex: 999,
+        }}
+      ></div>
       <Launch></Launch>
+      <div style={{ backgroundColor: 'black', zIndex: -999, position: 'absolute',height: '200vh', width: '100vw',}}></div>
       <div
         style={{
           width: '100vw',
@@ -22,6 +37,7 @@ function App() {
           justifyContent: 'center',
           overflow: 'hidden',
           scrollBehavior: 'unset',
+          marginTop: '25vh',
         }}
       >
         <Orbit
