@@ -1,4 +1,13 @@
-function Rocket() {
+import { useEffect, useState } from "react";
+
+function Rocket({goToProjects,scroll}) {
+
+  const [rocketY,setRocketY] = useState(200)
+
+  useEffect(()=>{
+    alert(scroll)
+  },[scroll])
+
   return (
     <>
       <style>
@@ -9,6 +18,10 @@ function Rocket() {
           }`}
       </style>
       <div
+        onClick={()=>{
+          setRocketY(2000);
+          goToProjects();
+        }}
         style={{
           zIndex: 1,
           width: '180px',
@@ -16,6 +29,9 @@ function Rocket() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
+          cursor:'pointer',
+          position: 'absolute',
+          top: scroll+'px'
         }}
       >
         <div
@@ -99,6 +115,17 @@ function Rocket() {
         'rgba(255,255,255, 0.2) 0px 23px 25px 0px inset, rgba(255,255,255, 0.1) 0px 79px 40px 0px inset, rgba(0, 0, 0, 0.2) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.2) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset',
           }}
         ></div>
+        <div
+        style={{
+          alignSelf:'center',
+          position: 'relative',
+          top: '-20px',
+          width: '28px',
+          background: 'linear-gradient(to bottom, transparent 10%, white 100%)',
+          height: scroll+'px',
+          transition: '2s',
+        }}
+      ></div>
       </div>
     </>
   );

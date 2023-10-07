@@ -3,12 +3,12 @@ import Rocket from './Rocket';
 import Stars from './Stars';
 import Text from './Text';
 
-function Launch() {
+function Launch({goToProjects,scroll}) {
   return (
     <div
       style={{
         width: '100vw',
-        height: '150vh',
+        height: '100vh',
       }}
     >
       <div
@@ -20,7 +20,7 @@ function Launch() {
           alignItems: 'center',
         }}
       >
-        <Stars></Stars>
+        <Stars quantity={200}></Stars>
         <Text text="Hi, i'm Felipe Kaian"></Text>
         <div
           style={{
@@ -29,7 +29,7 @@ function Launch() {
             alignItems: 'center',
           }}
         >
-          <Rocket></Rocket>
+          <Rocket goToProjects={goToProjects} scroll={scroll}></Rocket>
           <Fumes></Fumes>
         </div>
         

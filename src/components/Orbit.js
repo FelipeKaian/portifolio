@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { OrbitationTypes } from '../Utils';
 import Planet from './Planet';
 import Sun from './Sun';
+import Stars from './Stars';
 
 function Orbit({ planets }) {
   const [rotation, setRotation] = useState(0);
@@ -26,21 +27,20 @@ function Orbit({ planets }) {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (selectedPlanetIndex === null) {
-        setRotation((prevRotation) => prevRotation + rotationSpeed);
-      }
-    }, 0);
+    if (selectedPlanetIndex === null) {
+      setRotation((prevRotation) => prevRotation + rotationSpeed);
+    }
   }, [rotation, rotationSpeed, selectedPlanetIndex]);
 
   return (
     <div onClick={() => {}}>
+      <Stars quantity={100}></Stars>
       <div
         style={{
           width: '100vw',
           display: 'flex',
           justifyContent: 'center',
-          overflow:'hidden'
+          overflow: 'hidden',
         }}
       >
         <Sun
@@ -75,7 +75,7 @@ function Orbit({ planets }) {
               img={p.img}
               width={7 + Math.cos(a - 90) * 4}
               height={7 + Math.cos(a - 90) * 4}
-              top={200}
+              top={25}
               z={Math.floor(Math.sin(a) * 10)}
               left={45 + Math.cos(a) * 25}
               mouse={mouse}

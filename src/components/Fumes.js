@@ -4,15 +4,7 @@ import FadeCloud from './FadeCloud';
 function Fumes() {
   return (
     <div>
-      <div
-        style={{
-          position: 'relative',
-          top: '-20px',
-          width: '28px',
-          background: 'linear-gradient(to bottom, transparent 10%, white 100%)',
-          height: '200px',
-        }}
-      ></div>
+
       <Cloud
         top={85}
         scale={3}
