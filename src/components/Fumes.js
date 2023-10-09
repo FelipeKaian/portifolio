@@ -4,11 +4,10 @@ import FadeCloud from './FadeCloud';
 function Fumes() {
   return (
     <div>
-
       <Cloud
         top={85}
         scale={3}
-        left={48}
+        left={47.1}
         z={1}
       ></Cloud>
       <Cloud

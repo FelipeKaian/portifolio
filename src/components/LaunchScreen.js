@@ -1,11 +1,11 @@
-import Launch from "./Launch";
+import Launch from './Launch';
 
-function LaunchScreen({goToProjects,scroll}){
-    return <>
-
-    <Launch goToProjects={goToProjects} scroll={scroll}></Launch>
-
-  </>
+function LaunchScreen({ goToProjects, scroll, maxScroll }) {
+  return (
+    <>
+      <Launch goToProjects={goToProjects} scroll={scroll} maxScroll={maxScroll}></Launch>
+    </>
+  );
 }
 
 export default LaunchScreen;

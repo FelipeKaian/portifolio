@@ -56,7 +56,7 @@ function Planet({
           : 'scale(1)',
         position: 'absolute',
         left: left + '%',
-        top: +top+'%',
+        top: top,
         zIndex: z,
         marginTop: '20vh',
         width: width + 'vw',

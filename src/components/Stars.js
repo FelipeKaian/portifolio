@@ -2,29 +2,30 @@ import { useEffect } from 'react';
 import Star from './Star';
 import { useState } from 'react';
 
-function Stars({ quantity }) {
-  const [stars, setStars] = useState([]);
+function Stars({ quantity, scroll }) {
+  const [starsCoords, setStarsCoords] = useState([]);
 
   useEffect(() => {
     let starGenerator = setInterval(() => {
-      setStars((s) => {
+      setStarsCoords((s) => {
         if (s.length >= quantity) {
           clearInterval(starGenerator);
           return s;
         }
+        console.log(s)
         return [
           ...s,
-          <Star
-            top={Math.random() * 1000}
-            left={Math.random() * 2000}
-            delay={Math.random() * 5}
-          ></Star>,
+          {
+            y: Math.random() * 1000,
+            x: Math.random() * 2000,
+            d: 2000+(Math.random()*3000)
+          },
         ];
       });
     }, 25);
   }, []);
 
-  return stars.map((star) => star);
+  return starsCoords.map((coords) => <Star top={coords.y} left={coords.x} delay={coords.d} scroll={scroll}></Star>);
 }
 
 export default Stars;

@@ -1,27 +1,21 @@
 import { useEffect, useState } from 'react';
 
-function Star({ top, left, delay }) {
-  const [animate, setAnimate] = useState(false);
-  useEffect(() => {
-    setTimeout(() => setAnimate(true), delay * 1000);
-  }, []);
+function Star({ top, left, delay, scroll }) {
 
   return (
     <>
       <style>
         {`@keyframes tinkle {
-          0% {transform: scale(0);}
-          10% {transform: scale(1.5);}
-          50% {transform: scale(0);}
-          100% {transform: scale(0);}
+          0% {transform: scale(0.2);}
+          10% {transform: scale(1);}
+          100% {transform: scale(0.2);}
         }`}
       </style>
       <div
         style={{
-          animation: animate ? 'tinkle ' + 5 + 's infinite' : '',
-          display: animate ? 'block' : 'none',
+          animation:  'tinkle '+delay+'ms infinite' ,
           position: 'absolute',
-          top: top + 'px',
+          top: ((scroll + top) % 1000) + 'px',
           left: left + 'px',
           zIndex: -999,
         }}

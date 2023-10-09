@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { OrbitationTypes } from '../Utils';
 
-function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered }) {
+function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,maxScroll }) {
   const [isHover, setIsHover] = useState(false);
   const [blink, setBlink] = useState(false);
 
@@ -50,7 +50,8 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered }) {
         // backgroundSize:"30vw",
         zIndex: 0,
         position: 'absolute',
-        marginTop: '30vh',
+        top: scroll-maxScroll+300+'px',
+        marginBottom: '100vh',
         width: '20vw',
         height: '20vw',
         backgroundColor: '#ffa716',

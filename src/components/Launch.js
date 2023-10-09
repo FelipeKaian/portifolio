@@ -3,7 +3,7 @@ import Rocket from './Rocket';
 import Stars from './Stars';
 import Text from './Text';
 
-function Launch({goToProjects,scroll}) {
+function Launch({ goToProjects, scroll,maxScroll }) {
   return (
     <div
       style={{
@@ -11,6 +11,7 @@ function Launch({goToProjects,scroll}) {
         height: '100vh',
       }}
     >
+      <Rocket goToProjects={goToProjects} scroll={scroll} maxScroll={maxScroll}></Rocket>
       <div
         style={{
           height: '100vh',
@@ -18,9 +19,10 @@ function Launch({goToProjects,scroll}) {
           flexDirection: 'column',
           justifyContent: 'space-evenly',
           alignItems: 'center',
+          position: 'absolute',
+          top: scroll * 2 + 'px',
         }}
       >
-        <Stars quantity={200}></Stars>
         <Text text="Hi, i'm Felipe Kaian"></Text>
         <div
           style={{
@@ -29,10 +31,8 @@ function Launch({goToProjects,scroll}) {
             alignItems: 'center',
           }}
         >
-          <Rocket goToProjects={goToProjects} scroll={scroll}></Rocket>
           <Fumes></Fumes>
         </div>
-        
       </div>
     </div>
   );

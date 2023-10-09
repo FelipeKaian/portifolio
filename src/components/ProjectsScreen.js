@@ -5,7 +5,7 @@ import dino from '../assets/dinologo.png';
 import amazing from '../assets/amazinglogo.png';
 import Orbit from '../components/Orbit';
 
-function ProjectsScreen(){
+function ProjectsScreen({scroll,maxScroll}){
     return <>
       <div
         style={{
@@ -17,7 +17,8 @@ function ProjectsScreen(){
           scrollBehavior: 'unset',
         }}
       >
-        <Orbit
+        <Orbit scroll={scroll}
+        maxScroll={maxScroll}
           planets={[
             {
               color: 'rgb(55,137,235)',

@@ -4,7 +4,7 @@ import Planet from './Planet';
 import Sun from './Sun';
 import Stars from './Stars';
 
-function Orbit({ planets }) {
+function Orbit({ planets,scroll,maxScroll }) {
   const [rotation, setRotation] = useState(0);
   const [rotationSpeed, setRotationSpeed] = useState(OrbitationTypes.normal);
   const [selectedPlanetIndex, setSelectedPlanetIndex] = useState(null);
@@ -34,7 +34,7 @@ function Orbit({ planets }) {
 
   return (
     <div onClick={() => {}}>
-      <Stars quantity={100}></Stars>
+      {/* <Stars quantity={100}></Stars> */}
       <div
         style={{
           width: '100vw',
@@ -44,6 +44,8 @@ function Orbit({ planets }) {
         }}
       >
         <Sun
+        scroll={scroll}
+        maxScroll={maxScroll}
           mouse={mouse}
           rotationSpeed={rotationSpeed}
           setRotationSpeed={setRotationSpeed}
@@ -75,7 +77,7 @@ function Orbit({ planets }) {
               img={p.img}
               width={7 + Math.cos(a - 90) * 4}
               height={7 + Math.cos(a - 90) * 4}
-              top={25}
+              top={scroll-maxScroll+270+'px'}
               z={Math.floor(Math.sin(a) * 10)}
               left={45 + Math.cos(a) * 25}
               mouse={mouse}
