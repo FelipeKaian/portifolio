@@ -1,9 +1,14 @@
 import Fumes from './Fumes';
 import Rocket from './Rocket';
-import Stars from './Stars';
 import Text from './Text';
+import earth from '../assets/earth.svg';
+import Moon from './Moon';
+import { langContext } from './ScreenManager';
+import { useContext } from 'react';
+import Curriculum from './Curriculum';
 
-function Launch({ goToProjects, scroll,maxScroll }) {
+function Launch({ goToProjects, scroll, maxScroll, toggleLang }) {
+  const isBR = useContext(langContext);
   return (
     <div
       style={{
@@ -11,28 +16,34 @@ function Launch({ goToProjects, scroll,maxScroll }) {
         height: '100vh',
       }}
     >
-      <Rocket goToProjects={goToProjects} scroll={scroll} maxScroll={maxScroll}></Rocket>
+      <Moon scroll={scroll} toggleLang={toggleLang}></Moon>
+      <Curriculum scroll={scroll}></Curriculum>
+      <Rocket
+        goToProjects={goToProjects}
+        scroll={scroll}
+        maxScroll={maxScroll}
+      ></Rocket>
       <div
         style={{
           height: '100vh',
+          width: '100vw',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-evenly',
+          justifyContent: 'center',
           alignItems: 'center',
           position: 'absolute',
           top: scroll * 2 + 'px',
         }}
       >
-        <Text text="Hi, i'm Felipe Kaian"></Text>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Fumes></Fumes>
-        </div>
+        <Text
+          text={isBR ? 'Olá, me chamo Felipe Kaian' : "Hi, i'm Felipe Kaian"}
+          style={{ marginTop: '250px' }}
+        ></Text>
+        <Fumes></Fumes>
+        <img
+          src={earth}
+          style={{ transform: 'scale(10)', position: 'relative', top: '155vh' }}
+        ></img>
       </div>
     </div>
   );

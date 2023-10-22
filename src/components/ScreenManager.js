@@ -1,18 +1,27 @@
-import { useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import ProjectsScreen from './ProjectsScreen';
-import { screens } from '../Utils';
 import LaunchScreen from './LaunchScreen';
-import CometsScreen from './CometsScreen';
 import Stars from './Stars';
 
+import TimeLineScreen from './TimeLineScreen';
+
+export const langContext = createContext();
+
 function ScreenManager() {
+
   const [scroll, setScroll] = useState(0);
-  const maxScroll = 1500;
+  const maxScroll = 5500;
+  const queryParams = new URLSearchParams(window.location.search);
+  const [isBR, setIsBR] = useState(queryParams.get('ptBR'));
+
+  function toggleLang() {
+    setIsBR(!isBR);
+  }
 
   useEffect(() => {
     window.addEventListener('wheel', (event) => {
       setScroll((s) => {
-        let newScroll = s + event.deltaY * 0.1;
+        let newScroll = s + event.deltaY * 0.2;
         return newScroll >= 0
           ? newScroll < maxScroll
             ? newScroll
@@ -34,9 +43,17 @@ function ScreenManager() {
         scrollbarFaceColor: 'transparent',
       }}
     >
-      <Stars quantity={200} scroll={scroll}></Stars>
-      <LaunchScreen scroll={scroll} maxScroll={maxScroll}></LaunchScreen>
-      <ProjectsScreen scroll={scroll} maxScroll={maxScroll}></ProjectsScreen>
+      <h1 style={{ position: 'absolute', left: '50px' }}>{scroll}</h1>
+      <langContext.Provider value={isBR}>
+        <Stars quantity={200} scroll={scroll}></Stars>
+        <LaunchScreen
+          scroll={scroll}
+          maxScroll={maxScroll}
+          toggleLang={toggleLang}
+        ></LaunchScreen>
+        <TimeLineScreen scroll={scroll} maxScroll={maxScroll}></TimeLineScreen>
+        <ProjectsScreen scroll={scroll} maxScroll={maxScroll}></ProjectsScreen>
+      </langContext.Provider>
     </div>
   );
 }
