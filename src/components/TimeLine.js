@@ -27,6 +27,7 @@ function TimeLine({ items, scroll, maxScroll }) {
             <img
               src={item.img}
               style={{
+                
                 transform: 'scale(' + item.scale + ')',
                 width: '60vw',
                 position: 'relative',

@@ -11,13 +11,13 @@ function TimeLineScreen({ maxScroll, scroll }) {
       scroll={scroll}
       items={[
         {
-          scale: 1.5,
-          margin: 300,
+          scale: 1.3,
+          margin: 150,
           img: tentacle,
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
         },
         {
-          scale: 0.7,
+          scale: 0.9,
           margin: 150,
           img: ufo,
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
@@ -29,7 +29,7 @@ function TimeLineScreen({ maxScroll, scroll }) {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         },
         {
-          scale: 0.7,
+          scale: 0.9,
           margin: 150,
           img: satelite,
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
