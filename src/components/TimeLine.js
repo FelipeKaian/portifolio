@@ -1,12 +1,12 @@
-import Text from "./Text";
+import Text from './Text';
 
 function TimeLine({ items, scroll, maxScroll }) {
-  console.log(scroll)
+  console.log(scroll);
   return (
     <div
       style={{
         position: 'absolute',
-        top: scroll - maxScroll +1500 + 'px',
+        top: scroll - maxScroll + 1500 + 'px',
       }}
     >
       {items.map((item, index) => {
@@ -15,7 +15,12 @@ function TimeLine({ items, scroll, maxScroll }) {
             style={{
               position: 'relative',
               transition: '2s',
-              left: scroll>=300+(1000*(items.length-index-1))?'0px':(index % 2 == 0 ? '-1000px' : '1000px'),
+              left:
+                scroll >= 300 + 1000 * (items.length - index - 1)
+                  ? '0px'
+                  : index % 2 == 0
+                  ? '-1000px'
+                  : '1000px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
@@ -27,22 +32,19 @@ function TimeLine({ items, scroll, maxScroll }) {
             <img
               src={item.img}
               style={{
-                
-                transform: 'scale(' + item.scale + ')',
-                width: '60vw',
-                position: 'relative',
-                left: item.margin * (index % 2 == 0 ? -1 : 1) + 'px',
+                width: item.size + 'vw',
+                position: 'absolute',
               }}
               alt=''
             ></img>
             <Text
               style={{
                 width: '40vw',
-                textAlign: index % 2 == 0 ? 'end' : 'start',
                 fontSize: '32px',
-                padding: '100px'
+                padding: '100px',
+                textAlign: 'justify',
               }}
-              text={items.length-index+' '+item.text}
+              text={item.text}
             />
           </div>
         );
