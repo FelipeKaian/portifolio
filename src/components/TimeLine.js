@@ -15,37 +15,29 @@ function TimeLine({ items, scroll, maxScroll }) {
             style={{
               position: 'relative',
               transition: '2s',
-              left:
-                scroll >= 300 + 1000 * (items.length - index - 1)
-                  ? '0px'
-                  : index % 2 == 0
-                  ? '-1000px'
-                  : '1000px',
+              
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              flexDirection: index % 2 == 0 ? 'row' : 'row-reverse',
+              flexDirection: index % 2 == 1 ? 'row' : 'row-reverse',
               width: '100vw',
               height: '1000px',
             }}
           >
-            <img
-              src={item.img}
+            
+            <h1
               style={{
-                width: item.size + 'vw',
-                position: 'absolute',
-              }}
-              alt=''
-            ></img>
-            <Text
-              style={{
-                width: '40vw',
-                fontSize: '32px',
-                padding: '100px',
+                width: '35vw',
+                fontSize: '26px',
+                padding: '130px',
                 textAlign: 'justify',
+                fontFamily: 'Quicksand , sans-serif',
+                color: 'white',
+                fontWeight: 'lighter',
               }}
-              text={item.text}
-            />
+            >
+              {item.text}
+            </h1>
           </div>
         );
       })}

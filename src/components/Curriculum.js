@@ -20,8 +20,8 @@ function Curriculum({ scroll, toggleLang }) {
         width: '145px',
         height: '200px',
         position: 'absolute',
-        right: '250px',
-        top: -200 + scroll * 2 + 'px',
+        right: '400px',
+        top: -300 + scroll * 2 + 'px',
         cursor: 'pointer',
         zIndex: 999,
       }}

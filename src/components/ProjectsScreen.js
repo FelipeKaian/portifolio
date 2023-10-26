@@ -44,7 +44,7 @@ function ProjectsScreen({scroll,maxScroll}){
             },
             {
               color: 'rgb(43,128,255)',
-              text: 'Notify',
+              text: 'Notify App',
               img: notify,
               link: 'https://play.google.com/store/apps/details?id=com.notify.client.app',
             },

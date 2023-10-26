@@ -75,11 +75,11 @@ function Orbit({ planets,scroll,maxScroll }) {
               index={i}
               color={p.color}
               img={p.img}
-              width={10 + Math.cos(a - 90) * 4}
-              height={10 + Math.cos(a - 90) * 4}
+              width={7 + Math.cos(a - 90) * 4}
+              height={7 + Math.cos(a - 90) * 4}
               top={scroll-maxScroll+270+'px'}
               z={Math.floor(Math.sin(a) * 10)}
-              left={45 + Math.cos(a) * 30}
+              left={45 + Math.cos(a) * 25}
               mouse={mouse}
               link={p.link}
               setProjectHovered={setProjectHovered}

@@ -38,22 +38,22 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,max
       //     setIsHover(false);
       //   }
       // }}
-      // onMouseEnter={() => {
-      //   if (rotationSpeed !== OrbitationTypes.fast) {
-      //     setRotationSpeed(OrbitationTypes.slow);
-      //     setIsHover(true);
-      //   }
-      // }}
+      // // onMouseEnter={() => {
+      // //   setBlink(true);
+      //   setTimeout(() => {
+      //     setBlink(false);
+      //   }, 100);
+      // // }}
       style={{
         // backgroundImage:
         //   'url(https://s3.amazonaws.com/gameartpartnersimagehost/wp-content/uploads/2019/10/T-03.gif)',
         // backgroundSize:"30vw",
         zIndex: 0,
         position: 'absolute',
-        top: scroll-maxScroll+250+'px',
+        top: scroll-maxScroll+300+'px',
         marginBottom: '100vh',
-        width: '25vw',
-        height: '25vw',
+        width: '20vw',
+        height: '20vw',
         backgroundColor: '#ffa716',
         boxShadow:
           'rgba(255,255,255, 0.2) 0px 23px 25px 0px inset, rgba(255,255,255, 0.1) 0px 79px 40px 0px inset, rgba(255,255,255, 0.1) 0px -2px 1px, rgba(255,255,255, 0.1) 0px -4px 2px, rgba(255,255,255, 0.1) 0px -8px 4px, rgba(255,255,255, 0.1) 0px -16px 8px, rgba(255,255,255, 0.1) 0px -32px 16px, rgba(0, 0, 0, 0.2) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.2) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.1) 0px 2px 1px, rgba(0, 0, 0, 0.1) 0px 4px 2px, rgba(0, 0, 0, 0.1) 0px 8px 4px, rgba(0, 0, 0, 0.1) 0px 16px 8px, rgba(0, 0, 0, 0.1) 0px 32px 16px, rgba(255, 255, 0, 0.5) 0px 0px 100px 10px, rgba(255, 100, 0, 1) 0px 0px 500px 10px',
@@ -86,12 +86,12 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,max
       </h1>
       <h1
         style={{
-          top: 0 + mouseOffsetY + 'vw',
-          left: blink ?4 + mouseOffsetX + 'vw':3.5 + mouseOffsetX + 'vw',
+          top: 1 + mouseOffsetY + 'vw',
+          left: blink ?3.5 + mouseOffsetX + 'vw':3 + mouseOffsetX + 'vw',
           position: 'absolute',
           textTransform: 'uppercase',
           fontFamily: 'verdana',
-          fontSize: 9 + 'vw',
+          fontSize: 7 + 'vw',
           fontWeight: '700',
           color: 'rgba(0,0,0,0.4)',
           textAlign: 'center',
@@ -101,12 +101,12 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,max
       </h1>
       <h1
         style={{
-          top: 0 + mouseOffsetY + 'vw',
-          left: blink ?17 + mouseOffsetX + 'vw':16.5 + mouseOffsetX + 'vw',
+          top: 1 + mouseOffsetY + 'vw',
+          left: blink ?13.5 + mouseOffsetX + 'vw':13 + mouseOffsetX + 'vw',
           position: 'absolute',
           textTransform: 'uppercase',
           fontFamily: 'verdana',
-          fontSize: 9 + 'vw',
+          fontSize: 7 + 'vw',
           fontWeight: '700',
           color: 'rgba(0,0,0,0.4)',
         }}
@@ -115,12 +115,12 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,max
       </h1>
       <h1
         style={{
-          top: projectHovered?12 + mouseOffsetY + 'vw':7.5 + mouseOffsetY + 'vw',
-          left: projectHovered?11.5 + mouseOffsetX + 'vw' :12.6 + mouseOffsetX + 'vw',
+          top: projectHovered?11 + mouseOffsetY + 'vw':8.5 + mouseOffsetY + 'vw',
+          left: projectHovered?9 + mouseOffsetX + 'vw' :10 + mouseOffsetX + 'vw',
           transform: projectHovered?'' :'rotateZ(90deg)',
           position: 'absolute',
           textTransform: 'uppercase',
-          fontSize: projectHovered? '3vw': '7vw',
+          fontSize: projectHovered? '2vw': '4vw',
           fontWeight: '100',
           color: 'rgba(0,0,0,0.4)',
           textAlign: 'center',

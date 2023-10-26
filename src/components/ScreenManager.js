@@ -21,7 +21,7 @@ function ScreenManager() {
   useEffect(() => {
     window.addEventListener('wheel', (event) => {
       setScroll((s) => {
-        let newScroll = s + event.deltaY * 0.2;
+        let newScroll = s + event.deltaY * 0.1;
         return newScroll >= 0
           ? newScroll < maxScroll
             ? newScroll
@@ -43,7 +43,7 @@ function ScreenManager() {
         scrollbarFaceColor: 'transparent',
       }}
     >
-      <h1 style={{ position: 'absolute', left: '50px' }}>{scroll}</h1>
+      
       <langContext.Provider value={isBR}>
         <Stars quantity={200} scroll={scroll}></Stars>
         <LaunchScreen
