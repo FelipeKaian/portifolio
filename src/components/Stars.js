@@ -12,7 +12,7 @@ function Stars({ quantity, scroll }) {
           clearInterval(starGenerator);
           return s;
         }
-        console.log(s)
+
         return [
           ...s,
           {

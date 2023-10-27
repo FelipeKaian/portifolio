@@ -1,7 +1,7 @@
 import Text from './Text';
 
 function TimeLine({ items, scroll, maxScroll }) {
-  console.log(scroll);
+
   return (
     <div
       style={{
