@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/portifolio/static/js/main.ebac834c.js",
+    "static/media/cv.png": "/portifolio/static/media/cv.0593fb7e7af3a1b69200.png",
+    "static/media/amazinglogo.png": "/portifolio/static/media/amazinglogo.0e98d98e1797d7dcfbf7.png",
+    "static/media/cv.pdf": "/portifolio/static/media/cv.21e575e5829b4da1a249.pdf",
+    "static/media/dinologo.png": "/portifolio/static/media/dinologo.f800b2e59a3b863da6e8.png",
+    "static/media/earth.svg": "/portifolio/static/media/earth.61ed55118f1f00383fd08706dcdc2928.svg",
+    "static/media/ufo.svg": "/portifolio/static/media/ufo.e6b23c70303aa318a7eafdc036c92eed.svg",
+    "static/media/clocklogo.png": "/portifolio/static/media/clocklogo.0233bbbe80cecdeb00a0.png",
+    "static/media/tentacle.svg": "/portifolio/static/media/tentacle.e2ffde90777a8e85c79decc387843374.svg",
+    "static/media/satelite.svg": "/portifolio/static/media/satelite.66ae3ff7e6f5a2446bd577fff655eb40.svg",
+    "static/media/meteor.svg": "/portifolio/static/media/meteor.3ec75d245a36eb7b863a607835431784.svg",
+    "static/media/brazil.svg": "/portifolio/static/media/brazil.2f483b978b6584477edf73b55fd36763.svg",
+    "static/media/moon.svg": "/portifolio/static/media/moon.05ae4ed4f9da75e72737b9ffd55171f4.svg",
+    "static/media/unitedstates.svg": "/portifolio/static/media/unitedstates.33c8035805d0139924dd472c4d5b3adf.svg",
+    "index.html": "/portifolio/index.html",
+    "main.ebac834c.js.map": "/portifolio/static/js/main.ebac834c.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ebac834c.js"
+  ]
+}
