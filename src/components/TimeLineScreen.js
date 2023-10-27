@@ -35,8 +35,8 @@ function TimeLineScreen({ maxScroll, scroll }) {
           transformOrigin: 'right center',
           transform:
             'scale(' +
-            (scroll > 2000 ? (scroll > 3000 ? 1 : (scroll - 2000) / 1000) : 0) +
-            ')',
+            (scroll > 2500 ? ( (scroll - 2500) / 600) : 0) +
+            ') translateY('+(scroll > 3200 ? (scroll - 3200) : 0)+'px)',
         }}
         alt=''
       ></img>

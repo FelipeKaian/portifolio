@@ -13,15 +13,14 @@ function Flag({ scroll, toggleLang }) {
           toggleLang();
         }}
         style={{
+          width:'85px',
+          height: '130px',
           display: 'flex',
-          position: 'absolute',
-          left: '130px',
           justifyContent: 'space-around',
           alignItems: 'start',
-          transform: 'rotateZ(140deg)',
-          top: 125 + scroll * 2 + 'px',
+          transform: 'translateX(300px) rotateZ(180deg)',
           cursor: 'pointer',
-          zIndex: 999,
+          zIndex: 9999,
         }}
       >
         <div
