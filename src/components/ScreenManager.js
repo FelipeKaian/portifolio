@@ -52,7 +52,7 @@ function ScreenManager() {
           toggleLang={toggleLang}
         ></LaunchScreen>
         <TimeLineScreen scroll={scroll} maxScroll={maxScroll}></TimeLineScreen>
-        <ProjectsScreen scroll={scroll} maxScroll={maxScroll}></ProjectsScreen>
+        {/* <ProjectsScreen scroll={scroll} maxScroll={maxScroll}></ProjectsScreen> */}
       </langContext.Provider>
     </div>
   );
