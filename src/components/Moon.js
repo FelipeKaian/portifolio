@@ -12,7 +12,7 @@ function Moon({ scroll, toggleLang }) {
         top: -500 + scroll * 2 + 'px',
         position: 'absolute',
         left: '-500px',
-        zIndex: 999,
+        zIndex: 999,      
       }}
     >
       <img

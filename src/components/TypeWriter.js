@@ -19,24 +19,32 @@ function TypeWriter({ isBR }) {
   const type = () => {
     if (erasing) {
       if (text.length == 0) {
-        setTimeout(() => {
-          setErasing(false);
-          setCurrentTextIndex((i) => (i + 1) % texts.length);
-        }, 500);
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            setErasing(false);
+            setCurrentTextIndex((i) => (i + 1) % texts.length);
+          }, 500);
+        });
       } else {
-        setTimeout(() => {
-          setText((t) => t.substring(0, t.length - 1));
-        }, 50);
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            setText((t) => t.substring(0, t.length - 1));
+          }, 50);
+        });
       }
     } else {
       if (text.length == texts[currentTextIndex].length) {
-        setTimeout(() => {
-          setErasing(true);
-        }, 3000);
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            setErasing(true);
+          }, 3000);
+        });
       } else {
-        setTimeout(() => {
-          setText((t) => t + texts[currentTextIndex].charAt(t.length));
-        }, 100);
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            setText((t) => t + texts[currentTextIndex].charAt(t.length));
+          }, 100);
+        });
       }
     }
   };
