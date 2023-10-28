@@ -5,10 +5,34 @@ function Fumes() {
   return (
     <div>
       <Cloud
+        top={135}
+        scale={9}
+        left={50}
+        z={2}
+      ></Cloud>
+      <Cloud
+        top={120}
+        scale={6}
+        left={36}
+        z={2}
+      ></Cloud>
+      <Cloud
         top={85}
         scale={3}
-        left={47.1}
+        left={47.4}
         z={1}
+      ></Cloud>
+      <Cloud
+        top={115}
+        scale={7}
+        left={87.1}
+        z={2}
+      ></Cloud>
+      <Cloud
+        top={125}
+        scale={7}
+        left={67.1}
+        z={2}
       ></Cloud>
       <Cloud
         top={95}
@@ -54,7 +78,7 @@ function Fumes() {
       ></Cloud>
       <Cloud
         top={115}
-        scale={7}
+        scale={9}
         left={-5}
         z={1}
       ></Cloud>

@@ -1,6 +1,6 @@
 export const OrbitationTypes = {
-  slow: 0.005,
-  normal: 0.05,
+  slow: 0.05,
+  normal: 0.5,
   fast: 0.2,
   stop: 0,
 };

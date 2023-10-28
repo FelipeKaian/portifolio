@@ -8,7 +8,7 @@ function Text({ text, style }) {
         fontSize: '5vw',
         fontWeight: '700',
         color: '#f5f5f5',
-        textShadow: style.fontSize
+        textShadow: style?.fontSize
           ? `1px 1px 1px #919191`
           : `1px 1px 1px #919191,
              1px 2px 1px #919191,

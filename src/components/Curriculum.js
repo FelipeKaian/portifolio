@@ -7,14 +7,12 @@ import { useContext } from 'react';
 import { langContext } from './ScreenManager';
 
 function Curriculum({ scroll }) {
-
-  const isBR = useContext(langContext)
+  const isBR = useContext(langContext);
 
   const downloadPDF = () => {
-    const link = document.createElement('a');
-    link.href = cvPDF;
-    link.download = 'Currículo-Felipe-Kaian.pdf';
-    link.click();
+    window.open(
+      'https://drive.google.com/file/d/1oTnkxDhQfJCpHAazYkZTKZHRNuyqLzE5/view?usp=sharing'
+    );
   };
 
   return (
@@ -38,8 +36,14 @@ function Curriculum({ scroll }) {
           100% {transform: translate3d(0px, 0px, 0) rotateZ(-30deg);}
           }`}
       </style>
-      <Text text={isBR?'Baixar currículo':'Download resume'} style={{fontSize:'12px'}}></Text>
-      <img src={cv} style={{width:'100%',height:'100%',border: 'solid 2px white',}}></img>
+      <Text
+        text={isBR ? 'Currículo' : 'Resume'}
+        style={{ fontSize: '20px' }}
+      ></Text>
+      <img
+        src={cv}
+        style={{ width: '100%', height: '100%', border: 'solid 2px white' }}
+      ></img>
     </div>
   );
 }

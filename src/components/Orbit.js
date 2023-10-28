@@ -28,7 +28,7 @@ function Orbit({ planets,scroll,maxScroll }) {
 
   useEffect(() => {
     if (selectedPlanetIndex === null) {
-      setRotation((prevRotation) => prevRotation + rotationSpeed);
+      window.requestAnimationFrame(()=>setRotation((prevRotation) => prevRotation + rotationSpeed));
     }
   }, [rotation, rotationSpeed, selectedPlanetIndex]);
 

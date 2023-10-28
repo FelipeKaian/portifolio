@@ -1,7 +1,6 @@
 import Text from './Text';
 
 function TimeLine({ items, scroll, maxScroll }) {
-
   return (
     <div
       style={{
@@ -15,7 +14,7 @@ function TimeLine({ items, scroll, maxScroll }) {
             style={{
               position: 'relative',
               transition: '2s',
-              
+
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
@@ -24,20 +23,31 @@ function TimeLine({ items, scroll, maxScroll }) {
               height: '1000px',
             }}
           >
-            
-            <h1
-              style={{
-                width: '35vw',
-                fontSize: '26px',
-                padding: '130px',
-                textAlign: 'justify',
-                fontFamily: 'Quicksand , sans-serif',
-                color: 'white',
-                fontWeight: 'lighter',
-              }}
-            >
-              {item.text}
-            </h1>
+            <div style={{width: '35vw', justifyContent: 'center',padding:'130px'}}>
+              <h1
+                style={{
+                  
+                  fontSize: '2vw',
+                  textAlign: 'start',
+                  fontFamily: 'Quicksand , sans-serif',
+                  color: 'white',
+                  fontWeight: 'lighter',
+                }}
+              >
+                {item.title}
+              </h1>
+              <h1
+                style={{
+                  fontSize: '26px',
+                  textAlign: 'justify',
+                  fontFamily: 'Quicksand , sans-serif',
+                  color: 'white',
+                  fontWeight: 'lighter',
+                }}
+              >
+                {item.text}
+              </h1>
+            </div>
           </div>
         );
       })}

@@ -8,7 +8,6 @@ import TimeLineScreen from './TimeLineScreen';
 export const langContext = createContext();
 
 function ScreenManager() {
-
   const [scroll, setScroll] = useState(0);
   const maxScroll = 5500;
   const queryParams = new URLSearchParams(window.location.search);
@@ -19,6 +18,10 @@ function ScreenManager() {
   }
 
   useEffect(() => {
+    if (window.innerWidth < window.innerHeight) {
+      window.location =
+        'https://drive.google.com/file/d/1oTnkxDhQfJCpHAazYkZTKZHRNuyqLzE5/view?usp=sharing';
+    }
     window.addEventListener('wheel', (event) => {
       setScroll((s) => {
         let newScroll = s + event.deltaY * 0.1;
@@ -43,17 +46,24 @@ function ScreenManager() {
         scrollbarFaceColor: 'transparent',
       }}
     >
-      
-      <langContext.Provider value={isBR}>
-        <Stars quantity={200} scroll={scroll}></Stars>
-        <LaunchScreen
-          scroll={scroll}
-          maxScroll={maxScroll}
-          toggleLang={toggleLang}
-        ></LaunchScreen>
-        <TimeLineScreen scroll={scroll} maxScroll={maxScroll}></TimeLineScreen>
-        {/* <ProjectsScreen scroll={scroll} maxScroll={maxScroll}></ProjectsScreen> */}
-      </langContext.Provider>
+      {window.innerWidth > window.innerHeight && (
+        <langContext.Provider value={isBR}>
+          <Stars quantity={200} scroll={scroll}></Stars>
+          <LaunchScreen
+            scroll={scroll}
+            maxScroll={maxScroll}
+            toggleLang={toggleLang}
+          ></LaunchScreen>
+          <TimeLineScreen
+            scroll={scroll}
+            maxScroll={maxScroll}
+          ></TimeLineScreen>
+          <ProjectsScreen
+            scroll={scroll}
+            maxScroll={maxScroll}
+          ></ProjectsScreen>
+        </langContext.Provider>
+      )}
     </div>
   );
 }

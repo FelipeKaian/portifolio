@@ -1,9 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { OrbitationTypes } from '../Utils';
+import { langContext } from './ScreenManager';
 
-function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,maxScroll }) {
+function Sun({
+  setRotationSpeed,
+  mouse,
+  rotationSpeed,
+  projectHovered,
+  scroll,
+  maxScroll,
+}) {
   const [isHover, setIsHover] = useState(false);
   const [blink, setBlink] = useState(false);
+  const isBR = useContext(langContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,7 +59,7 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,max
         // backgroundSize:"30vw",
         zIndex: 0,
         position: 'absolute',
-        top: scroll-maxScroll+300+'px',
+        top: scroll - maxScroll + 300 + 'px',
         marginBottom: '100vh',
         width: '20vw',
         height: '20vw',
@@ -63,10 +72,10 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,max
       <h1
         style={{
           position: 'absolute',
-          top: "-10vw",
-          left: "-15vw",
+          top: '-15vw',
+          left: '-40vw',
           textAlign: 'center',
-          width: '50vw',
+          width: '100vw',
           textTransform: 'uppercase',
           fontFamily: 'verdana',
           fontSize: '5vw',
@@ -82,12 +91,12 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,max
              1px 8px 1px #919191`,
         }}
       >
-        {'my projects'}
+        {isBR ? 'alguns projetos pessoais' : 'some personal projects'}
       </h1>
       <h1
         style={{
           top: 1 + mouseOffsetY + 'vw',
-          left: blink ?3.5 + mouseOffsetX + 'vw':3 + mouseOffsetX + 'vw',
+          left: blink ? 3.5 + mouseOffsetX + 'vw' : 3 + mouseOffsetX + 'vw',
           position: 'absolute',
           textTransform: 'uppercase',
           fontFamily: 'verdana',
@@ -102,7 +111,7 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,max
       <h1
         style={{
           top: 1 + mouseOffsetY + 'vw',
-          left: blink ?13.5 + mouseOffsetX + 'vw':13 + mouseOffsetX + 'vw',
+          left: blink ? 13.5 + mouseOffsetX + 'vw' : 13 + mouseOffsetX + 'vw',
           position: 'absolute',
           textTransform: 'uppercase',
           fontFamily: 'verdana',
@@ -115,19 +124,23 @@ function Sun({ setRotationSpeed, mouse, rotationSpeed,projectHovered, scroll,max
       </h1>
       <h1
         style={{
-          top: projectHovered?11 + mouseOffsetY + 'vw':8.5 + mouseOffsetY + 'vw',
-          left: projectHovered?9 + mouseOffsetX + 'vw' :10 + mouseOffsetX + 'vw',
-          transform: projectHovered?'' :'rotateZ(90deg)',
+          top: projectHovered
+            ? 11 + mouseOffsetY + 'vw'
+            : 8.5 + mouseOffsetY + 'vw',
+          left: projectHovered
+            ? 9 + mouseOffsetX + 'vw'
+            : 10 + mouseOffsetX + 'vw',
+          transform: projectHovered ? '' : 'rotateZ(90deg)',
           position: 'absolute',
           textTransform: 'uppercase',
-          fontSize: projectHovered? '2vw': '4vw',
+          fontSize: projectHovered ? '2vw' : '4vw',
           fontWeight: '100',
           color: 'rgba(0,0,0,0.4)',
           textAlign: 'center',
           fontFamily: 'Segoe UI Emoji',
         }}
       >
-        {projectHovered ? '●': ')'}
+        {projectHovered ? '●' : ')'}
       </h1>
     </div>
   );

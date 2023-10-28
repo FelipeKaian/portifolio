@@ -6,6 +6,7 @@ import Moon from './Moon';
 import { langContext } from './ScreenManager';
 import { useContext } from 'react';
 import Curriculum from './Curriculum';
+import TypeWriter from './TypeWriter';
 
 function Launch({ goToProjects, scroll, maxScroll, toggleLang }) {
   const isBR = useContext(langContext);
@@ -35,10 +36,23 @@ function Launch({ goToProjects, scroll, maxScroll, toggleLang }) {
           top: scroll * 2 + 'px',
         }}
       >
-        <Text
-          text={isBR ? 'Olá, me chamo Felipe Kaian' : "Hi, i'm Felipe Kaian"}
-          style={{ marginTop: '250px' }}
-        ></Text>
+        <div>
+          
+        </div>
+        <TypeWriter isBR={isBR}></TypeWriter>
+        <h1
+          style={{
+            marginTop:'-50px',
+            fontSize: '26px',
+            textAlign: 'justify',
+            fontFamily: 'Quicksand , sans-serif',
+            color: 'white',
+            fontWeight: 'lighter',
+  
+          }}
+        >
+          {'Scroll down to travel'}
+        </h1>
         <Fumes></Fumes>
         <img
           src={earth}
