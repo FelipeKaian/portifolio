@@ -51,7 +51,7 @@ function Launch({ goToProjects, scroll, maxScroll, toggleLang }) {
   
           }}
         >
-          {'Scroll down to travel'}
+          {isBR?'Deslize para baixo':'Scroll down to travel'}
         </h1>
         <Fumes></Fumes>
         <img

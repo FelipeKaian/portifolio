@@ -1,9 +1,9 @@
 import Launch from './Launch';
 
-function LaunchScreen({ goToProjects, scroll, maxScroll,toggleLang }) {
+function LaunchScreen({  scroll, maxScroll,toggleLang }) {
   return (
     <>
-      <Launch goToProjects={goToProjects} scroll={scroll} maxScroll={maxScroll} toggleLang={toggleLang}></Launch>
+      <Launch scroll={scroll} maxScroll={maxScroll} toggleLang={toggleLang}></Launch>
     </>
   );
 }
