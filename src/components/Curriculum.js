@@ -32,7 +32,7 @@ function Curriculum({ scroll }) {
       <style>
         {`@keyframes float {
           0% {transform: translate3d(0px, 0px, 0) rotateZ(-30deg);}
-          50% {transform: translate3d(0px, 10px, 0) rotateZ(-30deg);}
+          50% {transform: translate3d(0px, 20px, 0) rotateZ(-30deg);}
           100% {transform: translate3d(0px, 0px, 0) rotateZ(-30deg);}
           }`}
       </style>

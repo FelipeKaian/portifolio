@@ -19,7 +19,6 @@ function Rocket({ goToProjects, scroll,maxScroll }) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          cursor: 'pointer',
           position: 'absolute',
           left: 'calc(50% - 90px)',
           top: scroll < maxScroll-1000 ? '200px' : scroll - maxScroll + 1200 + 'px',

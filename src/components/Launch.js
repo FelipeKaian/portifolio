@@ -42,7 +42,7 @@ function Launch({ goToProjects, scroll, maxScroll, toggleLang }) {
         <TypeWriter isBR={isBR}></TypeWriter>
         <h1
           style={{
-            marginTop:'-50px',
+            marginTop:'-45px',
             fontSize: '26px',
             textAlign: 'justify',
             fontFamily: 'Quicksand , sans-serif',

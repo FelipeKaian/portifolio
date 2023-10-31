@@ -4,18 +4,20 @@ import { useState } from 'react';
 
 function TypeWriter({ isBR }) {
   const [text, setText] = useState('');
-  const intro = isBR ? 'Olá, eu sou' : "Hi, i'm";
+  const intro = isBR ? 'Olá, sou' : "Hi, i'm";
   const texts = [
     'Felipe Kaian',
-    isBR ? 'engenheiro de software' : 'Software Engenier',
     isBR ? 'desenvolvedor React.js' : 'React.js Developer',
-    isBR ? 'super criativo' : 'super creative',
+    isBR ? 'engenheiro de software' : 'Software Engenier',
     isBR ? 'desenvolvedor Flutter' : 'Flutter Developer',
+    isBR ? 'super criativo' : 'super creative',
     isBR ? 'desenvolvedor Node.js' : 'Node.js Developer',
     isBR ? 'desenvolvedor Java' : 'Java Developer',
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [erasing, setErasing] = useState(false);
+  const [lastTranslation, setLastTranslation] = useState(null);
+
   const type = () => {
     if (erasing) {
       if (text.length == 0) {
