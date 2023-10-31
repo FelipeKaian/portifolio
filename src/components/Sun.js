@@ -72,13 +72,13 @@ function Sun({
       <h1
         style={{
           position: 'absolute',
-          top: '-15vw',
+          top: '-12vw',
           left: '-40vw',
           textAlign: 'center',
           width: '100vw',
           textTransform: 'uppercase',
           fontFamily: 'verdana',
-          fontSize: '5vw',
+          fontSize: '4vw',
           fontWeight: '700',
           color: '#f5f5f5',
           textShadow: `1px 1px 1px #919191,
