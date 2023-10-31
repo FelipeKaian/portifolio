@@ -12,11 +12,11 @@ function TypeWriter({ isBR }) {
     isBR ? 'desenvolvedor Flutter' : 'Flutter Developer',
     isBR ? 'super criativo' : 'super creative',
     isBR ? 'desenvolvedor Node.js' : 'Node.js Developer',
+    isBR ? 'muito inovador' : 'innovative',
     isBR ? 'desenvolvedor Java' : 'Java Developer',
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [erasing, setErasing] = useState(false);
-  const [lastTranslation, setLastTranslation] = useState(null);
 
   const type = () => {
     if (erasing) {
