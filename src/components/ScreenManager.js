@@ -24,7 +24,7 @@ function ScreenManager() {
     }
     window.addEventListener('wheel', (event) => {
       setScroll((s) => {
-        let newScroll = s + event.deltaY * 0.15;
+        let newScroll = s + event.deltaY * 0.1;
         return newScroll >= 0
           ? newScroll < maxScroll
             ? newScroll
