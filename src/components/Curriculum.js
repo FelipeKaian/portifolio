@@ -11,7 +11,7 @@ function Curriculum({ scroll }) {
 
   const downloadPDF = () => {
     window.open(
-      'https://drive.google.com/file/d/1oTnkxDhQfJCpHAazYkZTKZHRNuyqLzE5/view?usp=sharing'
+      'https://drive.google.com/file/d/1xaaI10JZmmlXjf0TWrLCDls55LD0JAOk/view?usp=sharing'
     );
   };
 
