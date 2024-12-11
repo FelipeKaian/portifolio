@@ -20,11 +20,11 @@ function ScreenManager() {
   useEffect(() => {
     if (window.innerWidth < window.innerHeight) {
       window.location =
-        'https://drive.google.com/file/d/1oTnkxDhQfJCpHAazYkZTKZHRNuyqLzE5/view?usp=sharing';
+        'https://drive.google.com/file/d/1xaaI10JZmmlXjf0TWrLCDls55LD0JAOk/view?usp=sharing';
     }
     window.addEventListener('wheel', (event) => {
       setScroll((s) => {
-        let newScroll = s + event.deltaY * 0.15;
+        let newScroll = s + event.deltaY * 0.1;
         return newScroll >= 0
           ? newScroll < maxScroll
             ? newScroll
